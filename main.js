@@ -19,74 +19,19 @@ function clock (){
 
 function getMonthInWords(){
     let date = new Date()
-    let month = date.getMonth()+1
-    switch (month){
-        case 1:
-            element3.textContent = "January"; 
-            break;
-        case 2:
-            element3.textContent = "February"; 
-            break;
-        case 3:
-            element3.textContent = "March";
-            break;
-        case 4:
-            element3.textContent = "April"; 
-            break;
-        case 5:
-            element3.textContent = "May"; 
-            break;
-        case 6:
-            element3.textContent = "June"; 
-            break;
-        case 7:
-            element3.textContent = "July"; 
-            break;
-        case 8:
-            element3.textContent = "August"; 
-            break;
-        case 9:
-            element3.textContent = "September"; 
-            break;
-        case 10:
-            element3.textContent = "October"; 
-            break;
-        case 11:
-            element3.textContent = "November"; 
-            break;
-        case 12:
-            element3.textContent = "December"; 
-            break;
-    }
+    let months = ['January','February','March','April','may','June','July','August','September','October','November','December']
+    let month = months[date.getMonth() ]
+    element3.textContent = month; 
+
 }
 
 
 function getDayInWords(){
     let date = new Date()
-    let day = date.getDay() +1
-    switch (day){
-        case 1:
-            element4.textContent = "Sunday"; 
-            break;
-        case 2:
-            element4.textContent = "Monday"; 
-            break;
-        case 3:
-            element4.textContent = "Tuesday";
-            break;
-        case 4:
-            element4.textContent = "wednesday"; 
-            break;
-        case 5:
-            element4.textContent = "Thursday"; 
-            break;
-        case 6:
-            element4.textContent = "Friday"; 
-            break;
-        case 7:
-            element4.textContent = "Saturday"; 
-            break;
-    }
+    let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    let day = days[date.getDay()]
+    element4.textContent = day
+
 }
 
 setInterval(clock , 1000)
