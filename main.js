@@ -1,18 +1,20 @@
 let element = document.getElementById("clock")
 let element2 = document.getElementById("bonus")
 let element3 = document.getElementById("bonus-2")
+let element4 = document.getElementById("day")
 
 function clock (){
     let date = new Date()
     let hours = date.getHours()
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
-    element.textContent = `${hours} : ${minutes} : ${seconds}`
+    element.textContent = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`
     let day = date.getDay()
     let month = date.getMonth() +1;
     let year = date.getFullYear();
     element2.textContent = `${day} : ${month} : ${year}`
     getMonthInWords()
+    getDayInWords()
 }
 
 function getMonthInWords(){
@@ -54,6 +56,35 @@ function getMonthInWords(){
             break;
         case 12:
             element3.textContent = "December"; 
+            break;
+    }
+}
+
+
+function getDayInWords(){
+    let date = new Date()
+    let day = date.getDay() +1
+    switch (day){
+        case 1:
+            element4.textContent = "Sunday"; 
+            break;
+        case 2:
+            element4.textContent = "Monday"; 
+            break;
+        case 3:
+            element4.textContent = "Tuesday";
+            break;
+        case 4:
+            element4.textContent = "wednesday"; 
+            break;
+        case 5:
+            element4.textContent = "Thursday"; 
+            break;
+        case 6:
+            element4.textContent = "Friday"; 
+            break;
+        case 7:
+            element4.textContent = "Saturday"; 
             break;
     }
 }
